@@ -1,65 +1,57 @@
-<div class="main-container">
+<clr-main-container>
 
-
-  <div class="alert alert-app-level" role="alert">
-    <div class="alert-items">
-      <div class="alert-item static">
-        <div class="alert-icon-wrapper">
-          <clr-icon class="alert-icon" shape="info-circle"></clr-icon>
+  <clr-alerts>
+    <clr-alert [clrAlertType]="'info'" [clrAlertAppLevel]="true">
+      <clr-alert-item>
+        <span class="alert-text">
+          This is the app level alert.
+        </span>
+        <div class="alert-actions">
+          <button class="btn alert-action">Fix</button>
         </div>
-        <span class="alert-text">This is to show some app level alert.</span>
+      </clr-alert-item>
+    </clr-alert>
+  </clr-alerts>
+
+
+  <clr-header class="header-6">
+    <div class="header-nav" [clr-nav-level]="2">
+      <a class="nav-link"><span class="nav-text">Header Link 1</span></a>
+      <a class="nav-link"><span class="nav-text">Header Link 2</span></a>
+      <a class="nav-link active"><span class="nav-text">Header Link 3</span></a>
+      <a class="nav-link"><span class="nav-text">Header Link 4</span></a>
+      <form class="search">
+        <label for="search_input">
+          <input id="search_input" type="text" placeholder="Search for keywords...">
+        </label>
+      </form>
+      <div class="header-actions">
+        <clr-dropdown>
+          <button class="nav-icon" clrDropdownTrigger>
+            <clr-icon shape="user"></clr-icon>
+            <clr-icon shape="caret down"></clr-icon>
+          </button>
+          <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
+            <a href="..." clrDropdownItem>About</a>
+            <a href="..." clrDropdownItem>Preferences</a>
+            <a href="..." clrDropdownItem>Log out</a>
+          </clr-dropdown-menu>
+        </clr-dropdown>
       </div>
     </div>
-  </div>
-
-
-
-  <header class="header header-6">
-    <div class="branding">
-      <a href="..." class="nav-link">
-        <clr-icon shape="vm-bug"></clr-icon>
-        <span class="title">Project Clarity</span>
-      </a>
-    </div>
-
-    <div class="header-nav">
-      <a href="..." class="active nav-link"><span class="nav-text">Dashboard</span></a>
-      <a href="..." class="nav-link"><span class="nav-text">Interactive Analytics</span></a>
-    </div>
-
-    <div class="header-actions">
-      <a href="..." class="nav-link nav-icon">
-        <clr-icon shape="cog"></clr-icon>
-      </a>
-    </div>
-  </header>
-
+  </clr-header>
 
 
   <div class="content-container">
-    <div class="content-area">
+    <main class="content-area">
 
       This area is the mail content pane.
       <router-outlet></router-outlet>
 
-    </div>
+    </main>
 
-    <nav class="sidenav">
+    <nav class="sidenav" [clr-nav-level]="1">
       <section class="sidenav-content">
-        <a href="..." class="nav-link active">
-          Nav Element 1
-        </a>
-        <a href="..." class="nav-link">
-          Nav Element 2
-        </a>
-        <section class="nav-group collapsible">
-          <input id="tabexample1" type="checkbox">
-          <label for="tabexample1">Collapsible Nav Element</label>
-          <ul class="nav-list">
-            <li><a class="nav-link">Link 1</a></li>
-            <li><a class="nav-link">Link 2</a></li>
-          </ul>
-        </section>
         <section class="nav-group">
           <input id="tabexample2" type="checkbox">
           <label for="tabexample2">Default Nav Element</label>
@@ -76,4 +68,4 @@
     </nav>
   </div>
 
-</div>
+</clr-main-container>
